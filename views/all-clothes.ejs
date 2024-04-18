@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Clothes</title>
+    <link rel="stylesheet" href="/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <div class="container">
+      <h1>All Clothes</h1>
+
+      <div class="pro-container">
+        <% if(clothes.length > 0) { %> <% clothes.forEach(clothing =>{%>
+        <div class="pro">
+          <a href="/clothes/<%= clothing._id %>">
+            <img class="image" src="" alt="image goes here"
+          /></a>
+          <div class="des">
+            <span>ThreadThrove</span>
+            <h3><%= clothing.Name %></h3>
+            <div class="star">
+              <% for(let i = 0; i < 5; i++) { %>
+              <i class="fa fa-star"></i>
+              <% } %>
+            </div>
+            <h2 class="price">$<%= clothing.Price %></h2>
+          </div>
+          <a href="" class="cart"><i class="fa fa-cart-plus"></i></a>
+        </div>
+        <% })%> <% } else { %>
+        <p>There are no clothes available.</p>
+        <% } %>
+      </div>
+
+      <a href="/clothes/add" class="new">Add new clothes</a>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

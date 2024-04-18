@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Clothes</title>
+    <link rel="stylesheet" href="/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-d">
+      <h1>All Clothes</h1>
+
+      <div class="clothing-container-d">
+        <a href="/clothes" class="go-back"><i class="fa fa-caret-left"></i></a>
+        <% if(clothing) { %>
+        <div class="clothing-item-d">
+          <h3 class="id">ID: <%= clothing.id %></h3>
+          <p>NAME: <%= clothing.Name %></p>
+          <p>DESCRIPTION: <%= clothing.Description %></p>
+          <p>PRICE: <%= clothing.Price %>$</p>
+          <p>STOCK: <%= clothing.Stock %> pieces.</p>
+          <p>AVAILABLE SIZES: <%= clothing.Sizes.join(', ') %></p>
+          <p>AVAILABLE COLORS: <%= clothing.Colors.join(', ') %></p>
+          <h4>REVIEWS:</h4>
+          <ul>
+            <% if (clothing.Reviews && clothing.Reviews.length > 0) { %> <%
+            clothing.Reviews.forEach(review => { %>
+            <li>
+              <p>Review ID: <%= review.ID_review %></p>
+              <p>ID Utilizator: <%= review.ID_user %></p>
+              <p>Rating: <%= review.Rating %></p>
+              <p>Comentariu: <%= review.Comment %></p>
+            </li>
+            <% }); %> <% } else { %>
+            <p>No reviews yet.</p>
+            <% } %>
+          </ul>
+        </div>
+        <% } else { %>
+        <p>Nu există haina disponibilă cu acest ID.</p>
+        <% } %>
+      </div>
+
+      <div class="links">
+        <a href="/clothes/update/<%= clothing._id %>" class="update"
+          ><i class="fa fa-pencil"></i
+        ></a>
+        <a class="delete" data-doc="<%= clothing._id %>"
+          ><i class="fa fa-trash"></i>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const trashcan = document.querySelector("a.delete");
+
+      trashcan.addEventListener("click", (e) => {
+        const endpoint = `/clothes/${trashcan.dataset.doc}`;
+
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

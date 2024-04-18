@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="You love clothes? We do to! Come join us, in our journey to discover your style!"
+    />
+    <meta name="keywords" content="clothes, fashion" />
+    <meta name="author" content="Firtala Maria-Doina" />
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merienda"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="images/frontpage/favicon.ico" />
+    <title>ThreadTrove</title>
+  </head>
+  <body>
+    <main>
+      <%- include('./partials/header.ejs') %>
+
+      <div class="cover">
+        <img
+          src="images/frontpage/cover.jpg"
+          alt="picture of a coat with a bag next to it"
+        />
+
+        <div class="text">
+          <h3>Spring collection 2024</h3>
+          <form action="clothes" method="get">
+            <input class="submit_input" type="submit" value="Shop Now" />
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <a href="/women"
+            ><img
+              src="images/frontpage/female.jpg"
+              alt="female manequeen with clothes"
+          /></a>
+          <div class="card-text"><h3>Women</h3></div>
+        </div>
+        <div class="card">
+          <a href=""
+            ><img
+              src="images/frontpage/male.jpg"
+              alt="three male manequeen with clothes"
+          /></a>
+          <div class="card-text"><h3>Men</h3></div>
+        </div>
+        <div class="card">
+          <a href=""
+            ><img
+              src="images/frontpage/bag.jpg"
+              alt="a close up picture of a bag"
+          /></a>
+          <div class="card-text"><h3>Accessories</h3></div>
+        </div>
+      </div>
+
+      <div class="new">
+        <img
+          src="images/frontpage/camasa.png"
+          alt="picture with clothes and the text coming soon under it"
+        />
+        <p>
+          Sign up to our <a href="">newsletter</a> to be notified when the new
+          collection is released!
+        </p>
+      </div>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
