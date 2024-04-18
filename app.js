@@ -5,7 +5,7 @@ const clothesRoutes = require("./routes/clothesRoutes");
 
 //conencting to mongoDB
 const dbURI =
-  "mongodb+srv://Maria:proiectDB@store.tnbq3ln.mongodb.net/ClothingStore?retryWrites=true&w=majority&appName=Store";
+  "mongodb+srv://<username>:<password>@store.tnbq3ln.mongodb.net/<YourCollectionName>?retryWrites=true&w=majority&appName=Store";
 
 mongoose
   .connect(dbURI)
