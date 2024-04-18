@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*partea de sus*/
+.ad {
+  border: 1px solid rgb(99, 28, 116);
+  background-color: blueviolet;
+  height: 2.5em;
+}
+
+.ad ul {
+  display: flex;
+  padding: 0;
+  justify-content: space-evenly;
+}
+
+.ad ul li {
+  margin-top: 0.5%;
+  font-size: 1vw;
+  font-family: barlow condensed, sans-serif;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.ad ul li:first-child {
+  margin-right: 20%;
+}
+
+.ad ul li:last-child {
+  margin-left: 20%;
+}
+
+.ad ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.ad ul li:first-child {
+  font-size: 0.9em;
+  font-weight: 1000;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  margin-top: 5vh;
+  float: left;
+  position: relative;
+  left: 55em;
+  width: 7vw;
+  font-family: barlow condensed, sans-serif;
+}
+
+.nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.nume_site {
+  font-size: 2.5vw;
+  font-family: "Merienda", sans-serif;
+  text-transform: capitalize;
+  font-weight: bolder;
+  color: purple;
+  margin-top: 1.2vw;
+  margin-left: 2%;
+  display: inline-block;
+}
+.nume_site a {
+  text-decoration: none;
+}
+
+.nume_site span {
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.nume_site:hover span,
+.nume_site:focus span {
+  animation: wave 1s infinite linear;
+  cursor: default;
+}
+/*
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.7em);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0.7em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.nume_site span:nth-child(1) {
+  animation-delay: 0s;
+}
+.nume_site span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.nume_site span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.nume_site span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.nume_site span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.nume_site span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.nume_site span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.nume_site span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.nume_site span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.nume_site span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+.nume_site span:nth-child(11) {
+  animation-delay: 1s;
+}
+*/
+/*search bar*/
+.search {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 1vw;
+  border-radius: 2.8vw;
+  background: #f6f6f6;
+  width: 42vw;
+  transition: box-shadow 0.25s;
+  margin-left: 30%;
+  margin-top: -1vw;
+  margin-bottom: 3em;
+}
+
+.search:focus-within {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.search_input {
+  font-size: 1vw;
+  font-family: "Lexend", sans-serif;
+  color: #333;
+  margin-left: 1.4vw;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 30vw;
+  flex: 1;
+}
+
+.search_input::placeholder,
+.search_icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  /*partea de sus*/
+  .ad {
+    height: 5vh;
+  }
+  .ad ul li {
+    font-size: 0.5em;
+  }
+  .ad ul li:first-child {
+    font-size: 0.4em;
+    margin-left: 2em;
+  }
+
+  .ad ul li:last-child {
+    margin-right: 2em;
+  }
+
+  .nav ul li {
+    margin-top: 1vh;
+    left: 220%;
+  }
+  .nav ul li a p {
+    display: none;
+  }
+  .nume_site {
+    font-size: 3vw;
+    letter-spacing: -0.1em;
+    margin-left: 2%;
+    margin-top: 2.9%;
+  }
+
+  .search {
+    margin-top: 1vh;
+    margin-bottom: 13vh;
+  }
+  .search_input {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  .ad {
+    height: 3em;
+  }
+  .ad ul li {
+    font-size: 1.8vw;
+  }
+
+  .ad ul li:first-child {
+    margin-left: 1.5%;
+    font-size: 1.2vw;
+  }
+
+  .ad ul li:last-child {
+    margin-right: 1.5%;
+  }
+
+  /*nume_site + iconite*/
+  .nav {
+    margin-top: 0.5vh;
+  }
+  .nav ul li {
+    margin-right: 0.1vw;
+    margin-top: 1.3vh;
+    left: 260%;
+  }
+
+  .nav ul li a p {
+    display: none;
+  }
+
+  .nume_site {
+    font-size: 3vw;
+    letter-spacing: -0.2em;
+  }
+  .search {
+    margin-bottom: 6em;
+  }
+  .search_input {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+  /*nume_site + iconite*/
+  .nav ul li {
+    margin-right: 1.2vw;
+    margin-top: 4.5vh;
+    left: 230%;
+  }
+  .nume_site {
+    letter-spacing: -0.2em;
+  }
+
+  .search {
+    margin-bottom: 5em;
+    margin-top: 2em;
+  }
+}

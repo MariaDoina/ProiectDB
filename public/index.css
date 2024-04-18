@@ -1,0 +1,278 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/*cover image*/
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -1%;
+  margin-bottom: 5.5em;
+}
+.cover img {
+  background-size: cover;
+  width: 50%;
+  height: auto;
+}
+
+.cover .text {
+  position: relative;
+  margin-top: -22em;
+  font-size: 2.2vw;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.cover .submit_input {
+  position: relative;
+  margin-top: 20em;
+  top: 60%; /* Ajustat pentru a fi mai jos */
+  left: 32%;
+  padding: 1vw;
+  font-size: 1.3vw;
+  text-transform: uppercase;
+  background-color: crimson;
+  border: none;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.1vw;
+}
+
+.submit_input:hover {
+  background-color: red;
+}
+
+/* partea cu imagini unde selectezi*/
+.container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 40px 5%;
+}
+.container .card {
+  width: 25%;
+  transition: 0.3s;
+  position: relative;
+  margin-top: 10em;
+  margin-bottom: 5%;
+}
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 6em;
+  left: 1.25em;
+  right: 1.25em;
+  pointer-events: none;
+}
+
+.card::before {
+  transform: scale(0, 1);
+  transition: transform ease-out 250ms;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.card::after {
+  transform: scale(1, 0);
+  transition: transform ease-out 250ms;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.card:hover::before {
+  transform: scale(1.05, 1);
+}
+
+.card:hover::after {
+  transform: scale(1, 1.05);
+}
+.container .card img {
+  width: 100%;
+  height: 85%;
+  border-radius: 20px;
+}
+
+.card-text {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+/*coming soon*/
+.new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -6%;
+}
+.new img {
+  width: 45vw;
+  height: 100vh;
+}
+
+.new p {
+  margin-top: -5vh;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 0.8vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.new a {
+  color: white;
+}
+
+.new a:hover {
+  color: red;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .cover {
+    margin-top: -5em;
+  }
+  .cover img {
+    width: 100%;
+  }
+
+  .cover .text {
+    margin-top: -32em;
+    font-size: 3vw;
+  }
+  .cover .submit_input {
+    font-size: 3vw;
+    margin-top: 17em;
+  }
+
+  /*women, men, acc*/
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .card {
+    width: 80%;
+    min-height: 26em;
+    max-height: 27em;
+    margin-top: 8em;
+    margin-bottom: -8em;
+    object-fit: contain;
+  }
+
+  .card::before,
+  .card::after {
+    bottom: 5em;
+  }
+
+  /*coming soon*/
+  .new {
+    margin-top: 6em;
+  }
+  .new img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .new p {
+    font-size: 2.3vw;
+    margin-top: -8vw;
+  }
+  .iframe-footer {
+    height: 115vh;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  /*cover img*/
+  .cover {
+    margin-top: -4em;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cover .text {
+    margin-top: -45em;
+  }
+
+  .cover .submit_input {
+    margin-top: 50em;
+  }
+
+  /*women, men, acc*/
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+  }
+
+  .container .card {
+    width: 60%;
+    min-height: 37.2em;
+    max-height: 38em;
+    margin-bottom: -4em;
+  }
+
+  .card:first-child {
+    margin-bottom: -10em; /* Adaugă spațiu deasupra primului card */
+  }
+
+  .card:last-child {
+    margin-top: 5em; /* Elimină spațiul dedesubtul ultimului card */
+  }
+
+  .card::before,
+  .card::after {
+    bottom: 7em;
+  }
+
+  /*coming soon*/
+  .new img {
+    width: 80%;
+    height: auto;
+    margin-top: 1.5em;
+  }
+
+  .new p {
+    font-size: 2vw;
+    margin-top: -8vw;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+  /*women, men, acc*/
+  .card::before,
+  .card::after {
+    bottom: 10vh;
+  }
+}
